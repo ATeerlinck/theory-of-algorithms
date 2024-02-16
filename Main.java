@@ -1,14 +1,14 @@
-
+import java.util.Arrays;
 public class Main {
     public static void main(String[] args){
         int[] A = new int[]{-8, 11, 10, -80, 12, -40, 16, -4};
         QuickSort(A, 0, A.length-1, 2);
         System.out.println("Question 2: Primitive partition last number pivot");
-        System.out.println(A);
+        System.out.println(Arrays.toString(A));
         A = new int[]{-400, -1100, -450, -500, -620, -800, -640, -400, -8, 11, 10, -80, 12, -40, 16, -4};
         QuickSort(A, 0, A.length-1, 1);
         System.out.println("Question 3: Primitive partition first number pivot");
-        System.out.println(A);
+        System.out.println(Arrays.toString(A));
     }
     
     public static int GeneratePivotFirst(int A[], int left, int right){
@@ -38,7 +38,7 @@ public class Main {
     
     public static int PrimitivePartition(int A[], int left, int right, int pivotIndex){
         int pivot = A[pivotIndex], partitionIndex = left-1;
-        for (int k = left; k<right; k++){
+        for (int k = left; k<=right; k++){
             if(A[k] <= pivot) partitionIndex++;
         }
         int temp = A[pivotIndex];
@@ -52,7 +52,7 @@ public class Main {
                 temp = A[i];
                 A[i] = A[j];
                 A[j] = temp;
-                i++; j++;
+                i++; j--;
             }
         }
         return partitionIndex;
@@ -106,7 +106,15 @@ public class Main {
     }
     
     public static void InsertionSort(int A[]){
-        
+        for(int i = 0; i<A.length;i++){
+			int j = i;
+			int temp = A[j];
+			while(j>0 && temp > A[j-1]){
+				A[j] = A[j-1];
+				j--;
+			}
+			A[j] = temp;
+		}
     }
 
     public static int OnePassPartition(int A[], int left, int right, int pivotIndex){
