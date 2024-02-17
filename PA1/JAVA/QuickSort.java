@@ -1,5 +1,4 @@
 
-
 public class QuickSort {
 
 	public static void quicksortMedianOf3(int[] array, int n) {
@@ -10,9 +9,21 @@ public class QuickSort {
 		quicksortRandom(array, 0, n - 1);
 	}
 
-	private static void quicksortMedianOf3(int[] array, int left, int right) { // complete this function
+	private static void quicksortMedianOf3(int[] array, int left, int right) {
+		if (left < right) {
+			int pivotIndex = Partition.generateMedianOf3Pivot(array, left, right);
+			int[] partitionIndexes = Partition.partition(array, left, right, pivotIndex);
+			quicksortMedianOf3(array, left, partitionIndexes[0] - 1);
+			quicksortMedianOf3(array, partitionIndexes[1] + 1, right);
+		}
 	}
 
-	private static void quicksortRandom(int[] array, int left, int right) { // complete this function
+	private static void quicksortRandom(int[] array, int left, int right) {
+		if (left < right) {
+			int pivotIndex = Partition.generateMedianOf3Pivot(array, left, right);
+			int[] partitionIndexes = Partition.partition(array, left, right, pivotIndex);
+			quicksortRandom(array, left, partitionIndexes[0] - 1);
+			quicksortRandom(array, partitionIndexes[1] + 1, right);
+		}
 	}
 }

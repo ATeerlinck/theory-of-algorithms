@@ -9,6 +9,9 @@ public class Main {
         QuickSort(A, 0, A.length-1, 1);
         System.out.println("Question 3: Primitive partition first number pivot");
         System.out.println(Arrays.toString(A));
+        A = new int[]{-400, -1100, -450, -500, -620, -800, -640, -400, -8, 11, 10, -80, 12, -40, 16, -4};
+        TwoIndexQuickSort(A, 0, A.length-1);
+        System.out.println(Arrays.toString(A));
     }
     
     public static int GeneratePivotFirst(int A[], int left, int right){
