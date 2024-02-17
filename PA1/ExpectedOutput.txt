@@ -1,0 +1,171 @@
+*** Sorting/Selection Test Without Duplicates ***
+
+Original array:                  [19, 1, 12, 100, 7, 8, 4, -10, 14, -1, 97, -1009, 4210]
+MergeSorted array:               [-1009, -10, -1, 1, 4, 7, 8, 12, 14, 19, 97, 100, 4210]
+QuickSorted (median of 3) array: [-1009, -10, -1, 1, 4, 7, 8, 12, 14, 19, 97, 100, 4210]
+QuickSorted (random) array:      [-1009, -10, -1, 1, 4, 7, 8, 12, 14, 19, 97, 100, 4210]
+RadixSorted array:               [-1009, -10, -1, 1, 4, 7, 8, 12, 14, 19, 97, 100, 4210]
+
+*** Randomized Quick-select ***
+
+1th smallest: -1009
+2th smallest: -10
+3th smallest: -1
+4th smallest: 1
+5th smallest: 4
+6th smallest: 7
+7th smallest: 8
+8th smallest: 12
+9th smallest: 14
+10th smallest: 19
+11th smallest: 97
+12th smallest: 100
+13th smallest: 4210
+
+*** Median of Medians Quick-select ***
+
+1th smallest: -1009
+2th smallest: -10
+3th smallest: -1
+4th smallest: 1
+5th smallest: 4
+6th smallest: 7
+7th smallest: 8
+8th smallest: 12
+9th smallest: 14
+10th smallest: 19
+11th smallest: 97
+12th smallest: 100
+13th smallest: 4210
+
+****************** Two-Index Partition with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+
+pivot = 4
+Lower Partition Index = 12
+Upper Partition Index = 22
+
+After Partitioning: [-13, -174, -13, 1, -9, -90, -845, -99, 1, -1009, -1, -10, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 44, 8, 45, 12, 14, 13, 67, 97, 56, 4210, 100, 7, 6, 9, 17, 45, 5, 12, 10, 7, 100, 13, 12, 19]
+
+****************** Randomized Quick-Sort with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+After Sorting:  [-1009, -845, -174, -99, -90, -13, -13, -10, -9, -1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 7, 8, 9, 10, 12, 12, 12, 13, 13, 14, 17, 19, 44, 45, 45, 56, 67, 97, 100, 100, 4210]
+
+****************** Median of 3 Quick-Sort with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+After Sorting:  [-1009, -845, -174, -99, -90, -13, -13, -10, -9, -1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 7, 8, 9, 10, 12, 12, 12, 13, 13, 14, 17, 19, 44, 45, 45, 56, 67, 97, 100, 100, 4210]
+
+****************** Radix-sort with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+After Sorting:  [-1009, -845, -174, -99, -90, -13, -13, -10, -9, -1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 7, 8, 9, 10, 12, 12, 12, 13, 13, 14, 17, 19, 44, 45, 45, 56, 67, 97, 100, 100, 4210]
+
+****************** Randomized Quick-Select with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+1th smallest number is -1009
+2th smallest number is -845
+3th smallest number is -174
+4th smallest number is -99
+5th smallest number is -90
+6th smallest number is -13
+7th smallest number is -13
+8th smallest number is -10
+9th smallest number is -9
+10th smallest number is -1
+11th smallest number is 1
+12th smallest number is 1
+13th smallest number is 4
+14th smallest number is 4
+15th smallest number is 4
+16th smallest number is 4
+17th smallest number is 4
+18th smallest number is 4
+19th smallest number is 4
+20th smallest number is 4
+21th smallest number is 4
+22th smallest number is 4
+23th smallest number is 4
+24th smallest number is 5
+25th smallest number is 6
+26th smallest number is 7
+27th smallest number is 7
+28th smallest number is 8
+29th smallest number is 9
+30th smallest number is 10
+31th smallest number is 12
+32th smallest number is 12
+33th smallest number is 12
+34th smallest number is 13
+35th smallest number is 13
+36th smallest number is 14
+37th smallest number is 17
+38th smallest number is 19
+39th smallest number is 44
+40th smallest number is 45
+41th smallest number is 45
+42th smallest number is 56
+43th smallest number is 67
+44th smallest number is 97
+45th smallest number is 100
+46th smallest number is 100
+47th smallest number is 4210
+
+****************** Median of Medians with Duplicates ******************
+
+Original Array: [-13, -174, 19, 1, 4, 12, 100, 7, 4, 4, 10, 12, 4, 5, 6, 7, 100, 56, 67, 13, 12, 45, 4, 4, 44, 8, 4, -10, 14, 4, -1, 97, -1009, 4210, 4, 4, 1, 9, 17, 45, 4, -99, -845, -90, -9, 13, -13]
+1th smallest number is -1009
+2th smallest number is -845
+3th smallest number is -174
+4th smallest number is -99
+5th smallest number is -90
+6th smallest number is -13
+7th smallest number is -13
+8th smallest number is -10
+9th smallest number is -9
+10th smallest number is -1
+11th smallest number is 1
+12th smallest number is 1
+13th smallest number is 4
+14th smallest number is 4
+15th smallest number is 4
+16th smallest number is 4
+17th smallest number is 4
+18th smallest number is 4
+19th smallest number is 4
+20th smallest number is 4
+21th smallest number is 4
+22th smallest number is 4
+23th smallest number is 4
+24th smallest number is 5
+25th smallest number is 6
+26th smallest number is 7
+27th smallest number is 7
+28th smallest number is 8
+29th smallest number is 9
+30th smallest number is 10
+31th smallest number is 12
+32th smallest number is 12
+33th smallest number is 12
+34th smallest number is 13
+35th smallest number is 13
+36th smallest number is 14
+37th smallest number is 17
+38th smallest number is 19
+39th smallest number is 44
+40th smallest number is 45
+41th smallest number is 45
+42th smallest number is 56
+43th smallest number is 67
+44th smallest number is 97
+45th smallest number is 100
+46th smallest number is 100
+47th smallest number is 4210
+
+*** Inversion Counting ***
+
+Array is: [19, 1, 12, 100, 7, 8, 4, -10, 14, -1, 97, -1009, 4210]
+Number of inversions is: 42
