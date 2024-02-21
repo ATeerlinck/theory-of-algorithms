@@ -18,5 +18,28 @@ public class MedianOfMedians {
 	}
 
 	private static int select(int[] array, int left, int right, int k) { // complete this function
+		if ((right - left + 1)<=5){
+            insertionSort(array, left, right);
+            return k-1;
+        }
+        int n = (right-left+1);
+        int[] medians = new int[n/5];
+        for(int i = left,r = 0; i <= right; i+=5){
+            int j = Math.min(i+4, right);
+            int[] section = new int[]{array[i],array[i+1],array[i+2],array[i+3],array[i+4]};
+            insertionSort(section, left, right);
+            medians[r++] = section[(i+j)/2];
+        }
+        int mom = medians[select(medians, 0, (int)Math.ceil(n/5)-1,(int) Math.ceil(n/5)/2)];
+        int momIndex = 0;
+        for (int i = left; i<=right; i+=5){
+            int j = Math.min(i+4, right);
+            momIndex = (i+j)/2;
+            if (array[momIndex] == mom) break;
+        }
+        int[] partitionIndexes = Partition.partition(array, left, right, momIndex);
+        if (k >= partitionIndexes[0]+1 && k<=partitionIndexes[1]+1) return partitionIndexes[0];
+        else if (k<partitionIndexes[0]+1) return select(array, left, partitionIndexes[0]-1, k);
+        else return select(array, partitionIndexes[1]+1, right, k);
 	}
 }
