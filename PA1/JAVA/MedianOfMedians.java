@@ -23,14 +23,13 @@ public class MedianOfMedians {
             return k-1;
         }
         int n = (right-left+1);
-        int[] medians = new int[n/5];
+        int[] medians = new int[(int)Math.ceil(n/5.0)];
         for(int i = left,r = 0; i <= right; i+=5){
             int j = Math.min(i+4, right);
-            int[] section = new int[]{array[i],array[i+1],array[i+2],array[i+3],array[i+4]};
-            insertionSort(section, left, right);
-            medians[r++] = section[(i+j)/2];
+            insertionSort(array, i, j);
+            medians[r++] = array[(i+j)/2];
         }
-        int mom = medians[select(medians, 0, (int)Math.ceil(n/5)-1,(int) Math.ceil(n/5)/2)];
+        int mom = medians[select(medians, 0, (int)Math.ceil(n/5.0)-1,(int) Math.ceil(n/5.0)/2)];
         int momIndex = 0;
         for (int i = left; i<=right; i+=5){
             int j = Math.min(i+4, right);
