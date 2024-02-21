@@ -29,6 +29,15 @@ public class RadixSort {
 
 	public static void radixSort(int[] array, int n) { // complete this function
 		//Approach 2 will be awarded 5 bonus points. Avoiding the creation of extra arrays for the negative and non-negative integers in Approach 2 will be rewarded 10 bonus points.
-		int[]
+		radixSortNonNeg(array, n);
+		int left = 0, right = array.length;
+		while (left< right){
+			if(array[left]>=0 && array[right]<0){
+				Partition.swap(array, left, right);
+				left++; right--;
+			}
+			else if(array[right]<0) left--;
+			else right--;
+		}
 	}
 }

@@ -36,9 +36,6 @@ public class Partition {
         int pivot = array[pivotIndex];
         while(i<=upperPartitionIndex){
             if(array[i]<pivot){
-                int temp = array[lowerPartitionIndex];
-                array[lowerPartitionIndex] = array[i];
-                array[i] = temp;
 				swap(array, lowerPartitionIndex, i);
                 i++;
                 lowerPartitionIndex++;
