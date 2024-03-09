@@ -30,13 +30,16 @@ public class HeavyHitters {
         HashMap<Character, Integer> freqMap = new HashMap<>();
         for (int i = 0; i < stream.length(); i++) {
             char c = stream.charAt(i);
-            if(freqMap.containsKey(c) || freqMap.size() < k-1) freqMap.merge(c, freqMap.get(c), (oldValue, newValue) -> oldValue + 1);
+            if(freqMap.containsKey(c))freqMap.put(c, freqMap.get(c)+1);
+            else if (freqMap.size() < k-1) freqMap.put(c, 1);
             else{
                 Iterator<Character> it = freqMap.keySet().iterator();
                 while (it.hasNext()) {
                     c = it.next();
-                    freqMap.merge(c, freqMap.get(c), (oldValue, newValue) -> oldValue - 1);
-                    if(freqMap.get(c) == 0) freqMap.remove(c);
+                    freqMap.put(c, freqMap.get(c)-1);
+                }
+                for (int j = 0; j<stream.length(); j++) {
+                    if(freqMap.containsKey(stream.charAt(j))) if(freqMap.get(stream.charAt(j)) == 0) freqMap.remove(stream.charAt(j));
                 }
             }
             
@@ -57,7 +60,7 @@ public class HeavyHitters {
         }
         for (int i = 0; i < stream.length(); i++) {
             char c = stream.charAt(i);
-            if(freqMap.containsKey(c)) freqMap.merge(c, freqMap.get(c), (oldValue, newValue) -> oldValue + 1);
+            if(freqMap.containsKey(c)) freqMap.put(c, freqMap.get(c)+1);
         }
         return heavyHittersHelper(freqMap, stream.length(), k);
     }

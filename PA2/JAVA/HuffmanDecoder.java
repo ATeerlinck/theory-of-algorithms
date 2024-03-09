@@ -9,7 +9,7 @@ public class HuffmanDecoder {
 		int n = encodedMsg.length();
 		for (int i = 0; i < n; i++) {
 			encode += encodedMsg.charAt(i);
-			if(encodingToCharMapping.contains(encode)){
+			if(encodingToCharMapping.containsKey(encode)){
 				char c = encodingToCharMapping.get(encode);
 				decodedMsg += c;
 				encode = "";  

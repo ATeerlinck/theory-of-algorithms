@@ -27,8 +27,8 @@ public class GreedyIntervals {
 	public static int color(List<Interval> intervals) { // complete this method
 		sortIntervalsByStartTime(intervals);
 		PriorityQueue<Integer> pq = new PriorityQueue<>(new IntegerComparator());
-		pq.offer(intervals.getFirst().end);
 		Iterator<Interval> it = intervals.iterator();
+		pq.offer(it.next().end);
 		while (it.hasNext()) {
 			Interval next = it.next();
 			if(next.start >= pq.peek()) pq.poll();

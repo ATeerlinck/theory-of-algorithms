@@ -7,7 +7,7 @@ import java.util.*;
 
 public class TestCorrectness {
 
-	private static String intervalFolder = "../";
+	private static String intervalFolder = "PA2/";
 
 	private static void testStringSorter() throws NumberFormatException, IOException {
 		System.out.println("\n****************** Sorting Strings ******************\n");

@@ -55,10 +55,12 @@ public class HuffmanEncoder {
 	private void createTable(BinaryTreeNode node, String encoding) { // complete this method
 		if (node.left == null && node.right == null)
 			charToEncodingMapping.put(node.character, encoding);
-		else if (node.left == null)
-			createTable(node.left, encoding + "0");
-		else if (node.left == null)
-			createTable(node.right, encoding + "1");
+		else {
+			if (node.left != null)
+				createTable(node.left, encoding + "0");
+			if (node.right != null)
+				createTable(node.right, encoding + "1");
+		}
 	}
 
 	public int getTableSize() {
