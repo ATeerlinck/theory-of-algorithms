@@ -19,6 +19,7 @@ public class LongestSubsequencePrac {
             out += ", ";
         }
         System.out.println(out);
+        LCS("AGTCXG","ACGT");
     }
 
     public static ArrayList<Integer> LIS(int[] A, int n) {
@@ -83,6 +84,43 @@ public class LongestSubsequencePrac {
             lisIndex = pred[lisIndex];
         }
         return answer;
+    }
+
+    public static String LCS(String n, String m){
+        int [][] LEN = new int[n.length()+1][m.length()+1];
+        String[][] DIR = new String[n.length()+1][m.length()+1];
+        int i, j;
+        LEN[0][0] = 0;
+        for(i = 0; i<=n.length();i++){
+            for (j = 0; j <= m.length(); j++) {
+                if(i == 0 || j == 0) DIR[i][j] = null;
+                else if(n.charAt(i-1) == m.charAt(j-1)){
+                    LEN[i][j] = 1 + LEN[i-1][j-1];
+                    DIR[i][j] = "D";
+                }
+                else if (LEN[i-1][j] > LEN[i][j-1]){
+                    LEN[i][j] = LEN[i-1][j];
+                    DIR[i][j] = "U";
+                }
+                else {
+                    LEN[i][j] = LEN[i][j-1];
+                    DIR[i][j] = "L";
+                }
+            }
+        }
+        i = n.length();
+        j = m.length();
+        String les = "";
+        while (DIR[i][j] != null){
+            if(DIR[i][j] == "D"){
+                les = n.charAt(i-1)+les;
+                i--;
+                j--; 
+            }
+            else if(DIR[i][j] == "U") i--;
+            else j--;
+        }
+        return les;
     }
 
     public static int getMax(int[] A) {
