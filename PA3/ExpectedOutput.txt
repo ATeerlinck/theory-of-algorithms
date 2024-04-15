@@ -1,0 +1,175 @@
+****************** 0-1 Knapsack ******************
+
+Weights are [5, 4, 6, 3, 2]
+Profits are [10, 40, 30, 50, 25]
+
+Optimal profit for knapsack of capacity  2 is  25
+Optimal profit for knapsack of capacity  3 is  50
+Optimal profit for knapsack of capacity  5 is  75
+Optimal profit for knapsack of capacity 10 is 115
+Optimal profit for knapsack of capacity 14 is 125
+Optimal profit for knapsack of capacity 15 is 145
+Optimal profit for knapsack of capacity 17 is 145
+Optimal profit for knapsack of capacity 20 is 155
+
+***
+
+Weights are [12, 7, 11, 8, 9]
+Profits are [24, 13, 23, 15, 16]
+
+Optimal profit for knapsack of capacity 26 is  51
+Optimal profit for knapsack of capacity 46 is  78
+Optimal profit for knapsack of capacity 60 is  91
+Optimal profit for knapsack of capacity 80 is  91
+
+***
+
+Weights are [23, 31, 29, 44, 53, 38, 63, 85, 89, 82]
+Profits are [92, 57, 49, 68, 60, 43, 67, 84, 87, 72]
+
+Optimal profit for knapsack of capacity 165 is 309
+Optimal profit for knapsack of capacity 310 is 456
+Optimal profit for knapsack of capacity 400 is 540
+Optimal profit for knapsack of capacity 410 is 549
+Optimal profit for knapsack of capacity 800 is 679
+
+****************** Maximum Weighted Independent Set ******************
+
+*** Tree 1 ***
+
+Maximum Independent Set has value = 5
+The included nodes are: [0, 3, 5, 6, 7]
+
+*** Tree 2 ***
+
+Maximum Independent Set has value = 75
+The included nodes are: [1, 2, 7, 8, 9, 10, 11]
+
+*** Tree 3 ***
+
+Maximum Independent Set has value = 10
+The included nodes are: [0, 4, 5, 6, 8, 10, 11, 12, 13, 14]
+
+*** Tree 4 ***
+
+Maximum Independent Set has value = 53
+The included nodes are: [0, 4, 5, 6, 8, 9, 10, 11, 12, 13]
+
+****************** Longest Common Subsequence ******************
+
+First String: AGGTAB
+Another String: GXTXAYB
+Longest Common Subsequence is GTAB having length 4
+
+***
+
+First String: XMJYAUZ
+Another String: MZJAWXU
+Longest Common Subsequence is MJAU having length 4
+
+***
+
+First String: AAACCGTGAGTTATTCGTTCTAGAA
+Another String: CACCCCTAAGGTACCTTTGGTTC
+Longest Common Subsequence is ACCTAGTATTGTTC having length 14
+
+****************** Longest Increasing Subsequence ******************
+
+A Longest Increasing Subsequence of [10, 22, 9, 33, 21, 50, 41, 60, 55, 57] is [10, 22, 33, 50, 55, 57]
+A Longest Increasing Subsequence of [10, 22, 9, 33, 21, 50, 41, 60, 7] is [10, 22, 33, 50, 60]
+A Longest Increasing Subsequence of [-1, 2, 0, 4, 8, 5, 7, 10, 3] is [-1, 2, 4, 5, 7, 10]
+A Longest Increasing Subsequence of [-30, 10, -20, 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15] is [-30, -20, 0, 4, 6, 9, 13, 15]
+
+****************** Test Vankin's Mile ******************
+
+*** Board ***
+
+[-1, 7, -2, 10, -5]
+[8, -4, 3, -6, 0]
+[5, 1, 5, 6, -5]
+[-7, -4, 1, -4, 8]
+[7, 1, -9, 4, 0]
+
+Starting at [0,1]
+
+Solution (Value/Direction) Board
+[-inf/*, 7/S, 5/L, 15/L, 10/L]
+[-inf/*, 3/U, 8/U, 9/U, 10/U]
+[-inf/*, 4/U, 13/U, 19/L, 14/L]
+[-inf/*, 0/U, 14/U, 15/U, 23/L]
+[-inf/*, 1/U, 5/U, 19/U, 23/U]
+
+Maximum gain is: 23
+Path: [0,1] --> [0,2] --> [1,2] --> [2,2] --> [2,3] --> [3,3] --> [3,4]
+
+Starting at [1,0]
+
+Solution (Value/Direction) Board
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[8/S, 4/L, 7/L, 1/L, 1/L]
+[13/U, 14/L, 19/L, 25/L, 20/L]
+[6/U, 10/U, 20/U, 21/U, 29/L]
+[13/U, 14/L, 11/U, 25/U, 29/U]
+
+Maximum gain is: 29
+Path: [1,0] --> [2,0] --> [2,1] --> [2,2] --> [2,3] --> [3,3] --> [3,4]
+
+Starting at [3,2]
+
+Solution (Value/Direction) Board
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, 1/S, -3/L, 5/L]
+[-inf/*, -inf/*, -8/U, 1/U, 5/U]
+
+Maximum gain is: 5
+Path: [3,2] --> [3,3] --> [3,4]
+
+*** Board ***
+
+[-1, 7, -2, 10, -5]
+[8, -4, 3, -6, 0]
+[5, 1, 5, 6, -5]
+[-7, -4, 1, -4, 8]
+[7, 1, -9, 4, 0]
+[4, 43, 13, -12, 4]
+
+Starting at [0,1]
+
+Solution (Value/Direction) Board
+[-inf/*, 7/S, 5/L, 15/L, 10/L]
+[-inf/*, 3/U, 8/U, 9/U, 10/U]
+[-inf/*, 4/U, 13/U, 19/L, 14/L]
+[-inf/*, 0/U, 14/U, 15/U, 23/L]
+[-inf/*, 1/U, 5/U, 19/U, 23/U]
+[-inf/*, 44/U, 57/L, 45/L, 49/L]
+
+Maximum gain is: 57
+Path: [0,1] --> [1,1] --> [2,1] --> [3,1] --> [4,1] --> [5,1] --> [5,2]
+
+Starting at [1,0]
+
+Solution (Value/Direction) Board
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[8/S, 4/L, 7/L, 1/L, 1/L]
+[13/U, 14/L, 19/L, 25/L, 20/L]
+[6/U, 10/U, 20/U, 21/U, 29/L]
+[13/U, 14/L, 11/U, 25/U, 29/U]
+[17/U, 60/L, 73/L, 61/L, 65/L]
+
+Maximum gain is: 73
+Path: [1,0] --> [2,0] --> [3,0] --> [4,0] --> [5,0] --> [5,1] --> [5,2]
+
+Starting at [3,2]
+
+Solution (Value/Direction) Board
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, -inf/*, -inf/*, -inf/*]
+[-inf/*, -inf/*, 1/S, -3/L, 5/L]
+[-inf/*, -inf/*, -8/U, 1/U, 5/U]
+[-inf/*, -inf/*, 5/U, -7/L, 9/U]
+
+Maximum gain is: 9
+Path: [3,2] --> [3,3] --> [3,4] --> [4,4] --> [5,4]
