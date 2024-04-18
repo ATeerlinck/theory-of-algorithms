@@ -19,12 +19,12 @@ public class VankinsMile {
 		}
 		values[startRow][startCol] = board[startRow][startCol];
 		directions[startRow][startCol] = 'S';
-		for (c = startCol+1; c < numCols; c++) {
+		for (c = startCol + 1; c < numCols; c++) {
 			values[startRow][c] = values[startRow][c - 1] + board[startRow][c];
 			directions[startRow][c] = 'L';
 		}
-		for (r = startRow+1; r < numRows; r++) {
-			values[r][startCol] = values[r-1][startCol] + board[r][startCol];
+		for (r = startRow + 1; r < numRows; r++) {
+			values[r][startCol] = values[r - 1][startCol] + board[r][startCol];
 			directions[r][startCol] = 'U';
 		}
 		for (r = startRow + 1; r < numRows; r++) {

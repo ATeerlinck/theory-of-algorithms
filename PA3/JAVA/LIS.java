@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LIS {
 
@@ -8,12 +7,12 @@ public class LIS {
 		int[] length = new int[len];
 		int[] pred = new int[len];
 		for (int i = 0; i < len; i++) {
-			length[i]=1;
-			pred[i]=-1;
+			length[i] = 1;
+			pred[i] = -1;
 			for (int j = 0; j < i; j++) {
-				if(arr[j]<arr[i] && length[j]+1>length[i]){
-					length[i] = length[j]+1;
-					pred[i]=j;
+				if (arr[j] < arr[i] && length[j] + 1 > length[i]) {
+					length[i] = length[j] + 1;
+					pred[i] = j;
 				}
 			}
 		}
@@ -22,7 +21,7 @@ public class LIS {
 			lisIndex = length[i] > length[lisIndex] ? i : lisIndex;
 		}
 		ArrayList<Integer> d = new ArrayList<>();
-		while (lisIndex>=0) {
+		while (lisIndex >= 0) {
 			d.add(arr[lisIndex]);
 			lisIndex = pred[lisIndex];
 		}

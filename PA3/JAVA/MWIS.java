@@ -1,6 +1,4 @@
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MWIS extends Tree {
 
@@ -21,33 +19,36 @@ public class MWIS extends Tree {
 	}
 
 	public int computeSum(int node) { // complete this function
-		if(computedSum[node] != Integer.MIN_VALUE) return computedSum[node];
+		if (computedSum[node] != Integer.MIN_VALUE)
+			return computedSum[node];
 		int excl = 0, incl = weights[node];
 		int[] children = adjList.get(node).stream().mapToInt(i -> i).toArray();
-		for (int child : children){
+		for (int child : children) {
 			excl += computeSum(child);
 			int[] grandchildren = adjList.get(child).stream().mapToInt(i -> i).toArray();
 			for (int grandchild : grandchildren) {
 				incl += computeSum(grandchild);
 			}
 		}
-		if (incl > excl){
+		if (incl > excl) {
 			computedSum[node] = incl;
 			isIncludedSumLarger[node] = true;
-		}
-		else computedSum[node] = excl;
+		} else
+			computedSum[node] = excl;
 		return computedSum[node];
 	}
 
 	public void computeSet(int root) { // complete this function
-		if(isIncludedSumLarger[root])isInSet[root] = true;
+		if (isIncludedSumLarger[root])
+			isInSet[root] = true;
 		for (int i : adjList.getFirst()) {
 			computeSetHelper(i, root);
 		}
 	}
 
 	private void computeSetHelper(int node, int parent) { // complete this function
-		if(isIncludedSumLarger[node] && !isInSet[parent]) isInSet[node] = true;
+		if (isIncludedSumLarger[node] && !isInSet[parent])
+			isInSet[node] = true;
 		for (int i : adjList.get(node)) {
 			computeSetHelper(i, node);
 		}

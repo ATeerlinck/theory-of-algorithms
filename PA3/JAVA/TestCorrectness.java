@@ -95,9 +95,9 @@ public class TestCorrectness {
 		int[] seq1 = { 10, 22, 9, 33, 21, 50, 41, 60, 7 };
 		int[] seq2 = { -1, 2, 0, 4, 8, 5, 7, 10, 3 };
 		int[] seq3 = { -30, 10, -20, 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 };
-		//int[] seq4 = { 0, 15, 25, 30, 35, 1, 2 };
-		//int[] seq4 = { 15, 20, 5, 30, 22, 25, 35, 24 };
-		int[][] sequences = { seq0, seq1, seq2, seq3}; //, seq4 };
+		// int[] seq4 = { 0, 15, 25, 30, 35, 1, 2 };
+		// int[] seq4 = { 15, 20, 5, 30, 22, 25, 35, 24 };
+		int[][] sequences = { seq0, seq1, seq2, seq3 }; // , seq4 };
 		for (int i = 0; i < sequences.length; i++)
 			System.out.printf("A Longest Increasing Subsequence of %s is %s%n", Arrays.toString(sequences[i]),
 					LIS.longestIncreasingSubsequence(sequences[i], sequences[i].length));
@@ -106,11 +106,11 @@ public class TestCorrectness {
 	private static void testVankinsMile() {
 		System.out.println("\n****************** Test Vankin's Mile ******************\n");
 		int board[][] = {
-				{-1, 7, -2, 10, -5},
-				{8, -4, 3, -6, 0},
-				{5, 1, 5, 6, -5},
-				{-7, -4, 1, -4, 8},
-				{7, 1, -9, 4, 0}
+				{ -1, 7, -2, 10, -5 },
+				{ 8, -4, 3, -6, 0 },
+				{ 5, 1, 5, 6, -5 },
+				{ -7, -4, 1, -4, 8 },
+				{ 7, 1, -9, 4, 0 }
 		};
 
 		System.out.println("*** Board ***\n");
@@ -121,22 +121,22 @@ public class TestCorrectness {
 			out.append("]");
 			System.out.println(out);
 		}
-		int[] startRow = {0, 1, 3};
-		int[] startCol = {1, 0, 2};
+		int[] startRow = { 0, 1, 3 };
+		int[] startCol = { 1, 0, 2 };
 		for (int i = 0; i < startRow.length; i++) {
 			int r = startRow[i];
-			int c= startCol[i];
+			int c = startCol[i];
 			System.out.printf("\nStarting at [%d,%d]\n", r, c);
 			VankinsMile.findBestPath(board, board.length, board[0].length, r, c);
 		}
 
-		board = new int[][]{
-				{-1, 7, -2, 10, -5},
-				{8, -4, 3, -6, 0},
-				{5, 1, 5, 6, -5},
-				{-7, -4, 1, -4, 8},
-				{7, 1, -9, 4, 0},
-				{4, 43, 13, -12, 4}
+		board = new int[][] {
+				{ -1, 7, -2, 10, -5 },
+				{ 8, -4, 3, -6, 0 },
+				{ 5, 1, 5, 6, -5 },
+				{ -7, -4, 1, -4, 8 },
+				{ 7, 1, -9, 4, 0 },
+				{ 4, 43, 13, -12, 4 }
 		};
 
 		System.out.println("\n*** Board ***\n");
@@ -147,11 +147,11 @@ public class TestCorrectness {
 			out.append("]");
 			System.out.println(out);
 		}
-		startRow = new int[]{0, 1, 3};
-		startCol = new int[]{1, 0, 2};
+		startRow = new int[] { 0, 1, 3 };
+		startCol = new int[] { 1, 0, 2 };
 		for (int i = 0; i < startRow.length; i++) {
 			int r = startRow[i];
-			int c= startCol[i];
+			int c = startCol[i];
 			System.out.printf("\nStarting at [%d,%d]\n", r, c);
 			VankinsMile.findBestPath(board, board.length, board[0].length, r, c);
 		}
