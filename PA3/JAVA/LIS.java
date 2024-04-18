@@ -9,7 +9,7 @@ public class LIS {
 		int[] pred = new int[len];
 		for (int i = 0; i < len; i++) {
 			length[i]=1;
-			pred[1]=-1;
+			pred[i]=-1;
 			for (int j = 0; j < i; j++) {
 				if(arr[j]<arr[i] && length[j]+1>length[i]){
 					length[i] = length[j]+1;
@@ -18,7 +18,7 @@ public class LIS {
 			}
 		}
 		int lisIndex = 0;
-		for (int i : length) {
+		for (int i = 0; i < pred.length; i++) {
 			lisIndex = length[i] > length[lisIndex] ? i : lisIndex;
 		}
 		ArrayList<Integer> d = new ArrayList<>();

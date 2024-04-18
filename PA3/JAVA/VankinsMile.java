@@ -4,43 +4,37 @@ public class VankinsMile {
 
 	public static void findBestPath(int board[][], int numRows, int numCols, int startRow, int startCol) {
 		// complete this function
-		int r = startRow;
-		int c = startCol;
+		int r = 0;
+		int c = 0;
 		int[][] values = new int[numRows][numCols];
 		char[][] directions = new char[numRows][numCols];
 		while (r < numRows) {
-			c = startCol;
+			c = 0;
 			while (c < numCols) {
 				values[r][c] = Integer.MIN_VALUE;
-				directions[r][c] = 'U';
+				directions[r][c] = '*';
 				c++;
 			}
 			r++;
 		}
-		for (c = startCol; c < numCols; c++) {
-			int sum = values[startRow][startCol];
-			for (int j = startCol; j < c; j++) {
-				sum += values[startRow][j];
-			}
-			values[startRow][c] = sum;
+		values[startRow][startCol] = board[startRow][startCol];
+		directions[startRow][startCol] = 'S';
+		for (c = startCol+1; c < numCols; c++) {
+			values[startRow][c] = values[startRow][c - 1] + board[startRow][c];
+			directions[startRow][c] = 'L';
 		}
-		for (r = startRow; r < numRows; r++) {
-			int sum = values[startRow][startCol];
-			for (int j = startRow; j < r; j++) {
-				sum += values[j][startCol];
-			}
-			values[r][startCol] = sum;
+		for (r = startRow+1; r < numRows; r++) {
+			values[r][startCol] = values[r-1][startCol] + board[r][startCol];
+			directions[r][startCol] = 'U';
 		}
-		while (r > startRow) {
-			while (c > startCol) {
-				values[r][c] = values[r][c] + Integer.max(values[r - 1][c], values[r][c - 1]);
-				if (values[r - 1][c] > values[r][c - 1])
-					directions[r][c] = 'L';
+		for (r = startRow + 1; r < numRows; r++) {
+			for (c = startCol + 1; c < numCols; c++) {
+				values[r][c] = board[r][c] + Integer.max(values[r][c - 1], values[r - 1][c]);
+				if (values[r][c - 1] < values[r - 1][c])
+					directions[r][c] = 'U';
 				else
-					directions[r][c] = 'C';
-				c--;
+					directions[r][c] = 'L';
 			}
-			r--;
 		}
 
 		pathFinder(values, directions, numRows, numCols, startRow, startCol);
